@@ -1,0 +1,116 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $body-font;
+}
+
+.container {
+    width: 90%;
+    max-width: rem(1106);
+    margin: auto;
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    padding: rem(11) rem(27);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: $body-font;
+    font-size: rem(14);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-outline {
+    color: $Very-Dark-Violet;
+    border: 2px solid $Dark-Violet;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: $Very-Dark-Violet;
+        color: $Very-Light-Gray;
+    }
+
+}
+
+.btn-outline-light {
+    color: $Very-Light-Gray;
+    border: 2px solid $Very-Light-Gray;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $Very-Dark-Violet;
+        background: $Very-Light-Gray;
+    }
+}
+
+// Typography
+h1,
+h2,
+h3 {
+    font-family: $heading-font;
+}
+
+h1 {
+    font-size: rem(67);
+    line-height: 1;
+    padding-bottom: rem(27);
+
+    @include breakpointDown(mobile) {
+        font-size: rem(55);
+    }
+}
+
+h2 {
+    font-size: rem(56);
+    width: 55%;
+    line-height: 1;
+    color: $Very-Light-Gray;
+    position: relative;
+    z-index: 5;
+
+    @include breakpointDown(tablet) {
+        width: 100%;
+        margin-bottom: rem(30);
+        font-size: rem(40);
+    }
+}
+
+p {
+    font-size: rem(15);
+    line-height: 1.7;
+    font-weight: 700;
+    padding-bottom: 30px;
+    color: $Dark-Grayish-Violet;
+}
+
+h3 {
+    font-size: rem(26);
+    padding-bottom: rem(15);
+    color: $Very-Dark-Violet;
+}
+
+h4 {
+    font-size: rem(14);
+    text-transform: uppercase;
+    padding-bottom: rem(27);
+    color: $Dark-Grayish-Violet;
+}

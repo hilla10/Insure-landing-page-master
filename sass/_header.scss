@@ -1,0 +1,84 @@
+.header {
+    padding: rem(20) 0;
+
+    @include breakpointDown(mobile) {
+        padding: rem(32) 0;
+    }
+
+    .navbar-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: rem(29);
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+
+            @include breakpointDown(mobile) {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                top: rem(100);
+                left: 0;
+                background: $Very-Dark-Violet;
+                z-index: 35;
+                padding: rem(30);
+                margin: auto;
+                transform: translateX(200vw);
+                overflow: hidden;
+
+                &.active {
+                    transform: translateX(0);
+                }
+
+                li {
+                    padding: rem(20);
+
+                    a {
+                        font-size: rem(18);
+                        color: $Very-Light-Gray;
+
+                        &:hover {
+                            color: $Dark-Grayish-Violet;
+                        }
+                    }
+                }
+
+                .btn-outline {
+                    border: 2px solid $Very-Light-Gray;
+                    color: $Very-Light-Gray;
+                    width: 70%;
+
+                    &:hover {
+                        background: $Very-Light-Gray;
+                        color: $Dark-Violet;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 375px) {
+                background: $Very-Dark-Violet url('../images/bg-pattern-mobile-nav.svg');
+                background-repeat: no-repeat;
+                background-position: 0 30vh;
+                height: rem(562);
+            }
+
+            a {
+                text-transform: uppercase;
+                color: $Dark-Grayish-Violet;
+                font-size: rem(14);
+                transition: color 0.3s ease-in-out;
+                font-weight: 700;
+
+                &:hover {
+                    color: $Very-Dark-Violet;
+                }
+            }
+        }
+    }
+}
